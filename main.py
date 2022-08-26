@@ -22,8 +22,10 @@ def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
-  high = str(Math.floor(weather['high'])) + '℃'
-  low =  str(Math.floor(weather['low'])) + '℃'
+  num1 = Math.floor(weather['high'])
+  num2 = Math.floor(weather['low'])
+  high = str(num1) + '℃'
+  low =  str(num2) + '℃'
   return weather['weather'], math.floor(weather['temp']), high, low
 
 def get_count():
